@@ -16,12 +16,12 @@ body {
   height: 100%;
 }
 
-.dashboard {
+.app-container {
 	height: 100%;
 }
 
 @media screen and (min-width: 800px) {
-	.dashboard {
+	.app-container {
 		display: grid;
 		grid-template-rows: 60px 1fr;	
 	}
@@ -37,11 +37,3 @@ body {
 	}
 }
 
-/* TEMP BG COLOURS - show grid */
-.header-name {
-	background: #f4eeee;
-}
-
-.main-section {
-	background: #e8d9d1
-}

@@ -1,5 +1,5 @@
 <template>
-  <div class="dashboard">
+  <div class="app-container">
   	<header-section></header-section>
   	<main-section></main-section>
   </div>
