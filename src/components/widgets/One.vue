@@ -1,3 +1,3 @@
 <template>
-	<div class="widget-one"></div>
+  <div class="widget-one"></div>
 </template>
