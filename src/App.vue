@@ -1,6 +1,6 @@
 <template>
   <div class="app-container" v-bind:class="collapseSidebar ? 'sidebar-collapse': 'sidebar-expand'">
-  	<header-section @clicked="toggleSidebar"></header-section>
+  	<header-section @clickedToggle="toggleSidebar"></header-section>
   	<main-section></main-section>
   </div>	
 </template>

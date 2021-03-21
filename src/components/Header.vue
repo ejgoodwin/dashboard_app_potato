@@ -16,7 +16,7 @@
 
 export default {
   	name: 'Header',
-  	emits: ['clicked'],
+  	emits: ['clickedToggle'],
 	data() {
 		return {
 			collapseSidebarData: false
@@ -27,7 +27,7 @@ export default {
 			// Toggle collapseSidebarData between true/false on click.
 			this.collapseSidebarData = !this.collapseSidebarData;
 			// Emit collapseSidebarData to be used in parent.
-			this.$emit('clicked', this.collapseSidebarData);
+			this.$emit('clickedToggle', this.collapseSidebarData);
 		}
 	}
 }
