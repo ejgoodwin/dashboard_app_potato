@@ -1,8 +1,8 @@
 <template>
-  <div class="app-container">
-  	<header-section></header-section>
+  <div class="app-container" :class="collapseSidebar ? 'sidebar-collapse': 'sidebar-expand'">
+  	<header-section @clicked="toggleSidebar"></header-section>
   	<main-section></main-section>
-  </div>
+  </div>	
 </template>
 
 <script>
@@ -14,6 +14,18 @@ export default {
   components: {
     'header-section': Header, 
     'main-section': Main
+  },
+  data() {
+  	return {
+  		collapseSidebar: false
+  	}
+  },
+  methods: {
+  	// When toggle btn in header is clicked, assign emitted data to collapseSidebar.
+  	// Use to apply class to app-container to show if sidebar is collapsed or expanded.
+    toggleSidebar (toggleData) {
+    	this.collapseSidebar = toggleData;
+    }
   }
 }
 </script>

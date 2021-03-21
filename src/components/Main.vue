@@ -16,3 +16,16 @@ export default {
   }
 }
 </script>
+
+<style type="text/css">
+@media screen and (min-width: 800px) {
+	.content {
+		display: grid;
+		grid-template-columns: 250px 1fr;
+	}
+
+	.sidebar-collapse .content {
+		grid-template-columns: 50px 1fr;
+	}
+}
+</style>
