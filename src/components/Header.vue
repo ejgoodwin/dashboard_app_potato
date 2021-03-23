@@ -2,11 +2,11 @@
 	<div class="header">
 		<div class="header-name">
 			<span class="header-name__greeting">Hi, Jane Doe</span>
-			<div class="toggle" v-on:click="toggleSidebar()">
+			<button class="toggle" v-on:click="toggleSidebar()">
 				<span class="toggle__line"></span>
 				<span class="toggle__line"></span>
 				<span class="toggle__line"></span>
-			</div>
+			</button>
 		</div>
 		<div class="header-main"></div>
 	</div>
@@ -45,6 +45,11 @@ export default {
 		padding: .75rem;
 	}
 
+	.toggle {
+		background: none;
+		border: none;
+	}
+
 	.toggle:hover {
 		cursor: pointer;
 	}
@@ -66,6 +71,10 @@ export default {
 
 		.sidebar-collapse .header {
 			grid-template-columns: 50px 1fr;
+		}
+		.sidebar-collapse .header-name {
+			justify-content: center;
+			padding: 0;
 		}
 
 		.sidebar-collapse .header-name__greeting {
