@@ -8,7 +8,14 @@
 				<span class="toggle__line"></span>
 			</div>
 		</div>
-		<div class="header-main"></div>
+		<div class="header-main">
+			<form class="search-form">
+				<input class="search-form__input" type="text" name="" placeholder="Search">
+				<button class="search-form__input-btn">
+					<i class="fas fa-search"></i>
+				</button>
+			</form>
+		</div>
 	</div>
 </template>
 
@@ -20,6 +27,50 @@ export default {
 </script>
 
 <style type="text/css">
+	.header-main {
+		align-items: center;
+		background: #263955;
+		display: flex;
+		justify-content: flex-end;
+		padding: .5rem .75rem;
+	}
+
+	.search-form {
+		display: flex;
+		font-size: .875rem;
+	}
+
+	.search-form__input,
+	.search-form__input-btn {
+		padding: .5rem .75rem;
+		border: none;
+	}
+
+	.search-form__input {
+		border-top-left-radius: 1rem;
+		border-bottom-left-radius: 1rem;
+	}
+
+	.search-form__input-btn {
+		background: white;
+		border-top-right-radius: 1rem;
+		border-bottom-right-radius: 1rem;
+		color: #A3A6B4;
+	}
+
+	.search-form__input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	  color: #989BA8;
+	  opacity: 1; /* Firefox */
+	}
+
+	.search-form__input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	  color: #989BA8;
+	}
+
+	.search-form__input::-ms-input-placeholder { /* Microsoft Edge */
+	  color: #989BA8;
+	}
+
 	.header-name {
 		align-items: center;
 		background: rgb(0,155,214);
