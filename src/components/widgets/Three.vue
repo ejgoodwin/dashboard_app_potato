@@ -89,6 +89,7 @@ export default {
 				}, 2000);
 				
 			});
+			// Reset input value.
 			this.cocktailVal = '';
 		},
 		displayDrink(index) {
