@@ -35,3 +35,72 @@ body {
 	}
 }
 
+/* === Search input styles === */
+/* TODO: refactor when header styles have been merged - both use similar styles -> DRY */
+.card-search__input-container {
+	display: flex;
+	font-size: .875rem;
+}
+
+.card-search__input,
+.card-search__input-btn {
+	padding: .5rem .75rem;
+	border: 1px solid #A3A6B4;
+}
+
+.card-search__input {
+	border-top-left-radius: 1rem;
+	border-bottom-left-radius: 1rem;
+	border-right: 0;
+	flex-grow: 1;
+}
+
+.card-search__input-btn,
+.card-search__input-btn-clear {
+	cursor: pointer;
+}
+
+.card-search__input-btn {
+	background: white;
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+	border-left: 0;
+	color: #A3A6B4;
+}
+
+.card-search__input-btn-clear {
+	background: none;
+	border: 0;
+	color: transparent;
+}
+
+.card-search__input-btn-clear--show {
+	color: red;
+}
+
+.card-search__input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #989BA8;
+  opacity: 1; /* Firefox */
+}
+.card-search__input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #989BA8;
+}
+.card-search__input::-ms-input-placeholder { /* Microsoft Edge */
+  color: #989BA8;
+}
+
+/* Suggested error styles */
+.card-error {
+	align-self: flex-start;
+    background: #f3dada;
+    border-radius: .25rem;
+    color: #580404;
+    display: none;
+    margin: 1rem 0 0;
+    padding: .5rem;
+}
+
+.card-error--show {
+	display: block;
+}
+
