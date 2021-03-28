@@ -31,6 +31,5 @@ Make a branch and start creating!
 [ ] Mobile menu. The sidebar collapses and expands on desktop but will require extra work on mobile and tablet. On smaller screens, the sidebar should be hidden from view by default and be made visible by clicking the hamburger button. A mockup can be provided if required. Please note: there is already a pull request for the expand/collapse desktop functionality [pull request #3](https://github.com/ejgoodwin/dashboard_app_potato/pull/3), so it would be advised to wait until this has been merged and build upon it.
 
 ### Useful Links
-Vue 3 docs: https://v3.vuejs.org/
-
-Set up Vue project with Vite: https://learnvue.co/2020/12/setting-up-your-first-vue3-project-vue-3-0-release/
+* Vue 3 docs: https://v3.vuejs.org/
+* Set up Vue project with Vite: https://learnvue.co/2020/12/setting-up-your-first-vue3-project-vue-3-0-release/
