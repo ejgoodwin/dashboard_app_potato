@@ -32,4 +32,5 @@ Make a branch and start creating!
 
 ### Useful Links
 Vue 3 docs: https://v3.vuejs.org/
+
 Set up Vue project with Vite: https://learnvue.co/2020/12/setting-up-your-first-vue3-project-vue-3-0-release/
