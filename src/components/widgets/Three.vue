@@ -37,7 +37,7 @@
 				<ul class="cocktail-results__list">
 					<li 
 						v-for="(cocktail, index) in cocktailRes"  
-						v-bind:class="this.selectedDrink == index ? 'cocktail-results__item--active' : null"
+						v-bind:class="this.selectedDrink === index ? 'cocktail-results__item--active' : null"
 						class="cocktail-results__item">
 						<button 
 							v-on:click="displayDrink(index)"
@@ -74,30 +74,35 @@ export default {
 			`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${this.cocktailVal}`)
 			.then(res => res.json())
 			.then(data => {
+				// Assign the drinks data to cocktailRes.
 				this.cocktailRes = data.drinks;
+				// Set the drink image as the first item's image.
 				this.drinkImage = data.drinks[0].strDrinkThumb;
+				// Set the selected drink to the first item.
 				this.selectedDrink = 0;
+				// Make sure error state is false.
+				this.cocktailError = false;
 			})
 			.catch(error => {
 				console.log("error" + error);
 				// Reset cocktail array if nothing is returned.
 				this.cocktailRes = [];
-				// Change error state to true, and then back to false.
+				// Change error state to true.
 				this.cocktailError = true;
-				setTimeout(() => {
-					this.cocktailError = false;
-				}, 2000);
 				
 			});
 			// Reset input value.
 			this.cocktailVal = '';
 		},
 		displayDrink(index) {
+			// Change `selectedDrink` to clicked button to ensure active styling.
 			this.selectedDrink = index;
+			// Change the drink image to selected.
 			this.drinkImage = this.cocktailRes[index].strDrinkThumb;
 		},
 		clearSearch() {
-			this.cocktailVal = ''
+			// Reset the input value.
+			this.cocktailVal = '';
 		}
 	}
 }

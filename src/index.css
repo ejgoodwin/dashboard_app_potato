@@ -35,7 +35,7 @@ body {
 	}
 }
 
-/* === Search input styles === */
+/* --- Suggested search input styles --- */
 /* TODO: refactor when header styles have been merged - both use similar styles -> DRY */
 .card-search__input-container {
 	display: flex;
@@ -72,6 +72,7 @@ body {
 	background: none;
 	border: 0;
 	color: transparent;
+	padding: .5rem;
 }
 
 .card-search__input-btn-clear--show {
@@ -89,7 +90,7 @@ body {
   color: #989BA8;
 }
 
-/* Suggested error styles */
+/* --- Suggested error styles --- */
 .card-error {
 	align-self: flex-start;
     background: #f3dada;
