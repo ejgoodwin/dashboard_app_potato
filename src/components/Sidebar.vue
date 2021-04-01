@@ -80,5 +80,15 @@ export default {
 		font-size: .75rem;
 		padding: .1rem .5rem;
 	}
+
+	@media screen and (min-width: 800px) {
+		.sidebar-collapse .sidebar__text {
+			display: none;
+		}
+
+		.sidebar-collapse .sidebar__nav-icon {
+			margin-right: 0;
+		}
+	}
 	
 </style>

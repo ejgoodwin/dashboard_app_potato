@@ -2,11 +2,11 @@
 	<div class="header">
 		<div class="header-name">
 			<span class="header-name__greeting">Hi, Jane Doe</span>
-			<div class="toggle">
+			<button class="toggle" v-on:click="toggleSidebar()">
 				<span class="toggle__line"></span>
 				<span class="toggle__line"></span>
 				<span class="toggle__line"></span>
-			</div>
+			</button>
 		</div>
 		<div class="header-main"></div>
 	</div>
@@ -15,7 +15,21 @@
 <script>
 
 export default {
-  name: 'Header'
+  	name: 'Header',
+  	emits: ['clickedToggle'],
+	data() {
+		return {
+			collapseSidebarData: false
+		}
+	},
+	methods: {
+		toggleSidebar: function () {
+			// Toggle collapseSidebarData between true/false on click.
+			this.collapseSidebarData = !this.collapseSidebarData;
+			// Emit collapseSidebarData to be used in parent.
+			this.$emit('clickedToggle', this.collapseSidebarData);
+		}
+	}
 }
 </script>
 
@@ -31,6 +45,11 @@ export default {
 		padding: .75rem;
 	}
 
+	.toggle {
+		background: none;
+		border: none;
+	}
+
 	.toggle:hover {
 		cursor: pointer;
 	}
@@ -42,6 +61,25 @@ export default {
 		height: 2px;
 		margin: 4px 0;
 		width: 24px;
+	}
+
+	@media screen and (min-width: 800px) {
+		.header {
+			display: grid;
+			grid-template-columns: 250px 1fr;
+		}
+
+		.sidebar-collapse .header {
+			grid-template-columns: 50px 1fr;
+		}
+		.sidebar-collapse .header-name {
+			justify-content: center;
+			padding: 0;
+		}
+
+		.sidebar-collapse .header-name__greeting {
+			display: none;
+		}
 	}
 
 </style>
