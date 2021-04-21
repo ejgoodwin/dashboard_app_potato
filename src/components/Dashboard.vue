@@ -1,8 +1,8 @@
 <template>
   <div class="dashboard">
-  	<one></one>
-  	<two></two>
-  	<three></three>
+  	<one class="card"></one>
+  	<two class="card"></two>
+  	<three class="card"></three>
   </div>
 </template>
 
