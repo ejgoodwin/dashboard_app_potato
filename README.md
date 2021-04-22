@@ -26,7 +26,7 @@ Make a branch and start creating!
 **Submitting work**: make a pull request and add a reviewer. When the reviewer is happy they will merge the changes into the `main` branch.
 
 ### General Tasks
-[ ] Create a CSS class for `.card`. This class will set the style of the cards to give uniformity and could include a border, border radius, and padding. This will be used by all card components, so should be set in `index.css`.
+[ ] `In progress: Erica` Create a CSS class for `.card`. This class will set the style of the cards to give uniformity and could include a border, border radius, and padding. This will be used by all card components, so should be set in `index.css`.
 
 [ ] Mobile menu. The sidebar collapses and expands on desktop but will require extra work on mobile and tablet. On smaller screens, the sidebar should be hidden from view by default and be made visible by clicking the hamburger button. A mockup can be provided if required. Please note: there is already a pull request for the expand/collapse desktop functionality [pull request #3](https://github.com/ejgoodwin/dashboard_app_potato/pull/3), so it would be advised to wait until this has been merged and build upon it.
 
