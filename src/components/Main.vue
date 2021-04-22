@@ -23,9 +23,5 @@ export default {
 		display: grid;
 		grid-template-columns: 250px 1fr;
 	}
-
-	.sidebar-collapse .content {
-		grid-template-columns: 50px 1fr;
-	}
 }
 </style>

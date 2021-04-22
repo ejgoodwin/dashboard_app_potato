@@ -1,5 +1,5 @@
 <template>
-  <div class="app-container" v-bind:class="collapseSidebar ? 'sidebar-collapse': 'sidebar-expand'">
+  <div class="app-container" v-bind:class="collapseSidebar ? 'sidebar-toggle': 'null'">
   	<header-section @clickedToggle="toggleSidebar"></header-section>
   	<main-section></main-section>
   </div>	
