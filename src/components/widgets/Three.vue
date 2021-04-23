@@ -1,5 +1,5 @@
 <template>
-	<div class="cocktails">
+	<div class="card cocktails">
 		<h2>Discover a new cocktail</h2>
 		<form v-on:submit.prevent="submitted" class="card-search">
 			<label class="search-label" for="cocktail-search">

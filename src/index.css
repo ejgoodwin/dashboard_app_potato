@@ -5,12 +5,18 @@ body {
 
 body {
 	margin: 0;
+	height: 100%;
+}
+
+body,
+button,
+input {
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   height: 100%;
 }
 
@@ -23,6 +29,11 @@ body {
 		display: grid;
 		grid-template-rows: 50px 1fr;	
 	}
+}
+
+/* Class to hide card for the header search/filter */
+.card.header-search__hide-card {
+	display: none;
 }
 
 /* --- Suggested search input styles --- */
