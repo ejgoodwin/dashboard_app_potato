@@ -1,24 +1,27 @@
 <template>
-  <div class="dashboard">
-  	<one></one>
-  	<two></two>
-  	<three></three>
-  </div>
+    <div class="dashboard">
+        <one></one>
+        <two></two>
+        <three></three>
+        <four></four>
+    </div>
 </template>
 
 <script>
 import One from './widgets/One.vue';
 import Two from './widgets/Two.vue';
 import Three from './widgets/Three.vue';
+import Four from './widgets/Four.vue';
 
 export default {
-  name: 'Dashboard',
-  components: {
-  	'one': One,
-  	'two': Two,
-  	'three': Three
-  }
-}
+    name: 'Dashboard',
+    components: {
+        'one': One,
+        'two': Two,
+        'three': Three,
+        'four': Four
+        }
+    }
 </script>
 
 
