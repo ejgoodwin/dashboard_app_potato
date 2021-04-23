@@ -14,14 +14,14 @@ import Three from './widgets/Three.vue';
 import Four from './widgets/Four.vue';
 
 export default {
-  name: 'Dashboard',
-  components: {
-  	'one': One,
-  	'two': Two,
-  	'three': Three,
-    'four': Four
-  }
-}
+    name: 'Dashboard',
+    components: {
+        'one': One,
+        'two': Two,
+        'three': Three,
+        'four': Four
+        }
+    }
 </script>
 
 
