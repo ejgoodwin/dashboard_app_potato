@@ -1,10 +1,10 @@
 <template>
-  <div class="dashboard">
-  	<one></one>
-  	<two></two>
-  	<three></three>
-    <four></four>
-  </div>
+    <div class="dashboard">
+        <one></one>
+        <two></two>
+        <three></three>
+        <four></four>
+    </div>
 </template>
 
 <script>
