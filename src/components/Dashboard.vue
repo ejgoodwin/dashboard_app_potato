@@ -31,8 +31,9 @@ export default {
 		padding: 16px;
 	}
 	
-	@media screen and (max-width: 550px){
+	@media screen and (max-width: 550px) {
 		.dashboard {
-			grid-template-columns: 1fr;}
+			grid-template-columns: 1fr;
+		}
 	}
 </style>
