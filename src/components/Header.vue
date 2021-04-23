@@ -63,7 +63,7 @@ export default {
 			cardHeadingsAll.forEach(heading => {
 				heading.closest('.card').classList.remove('header-search__hide-card');
 			});
-			// If there is a search term, filter through the id values of cards to find match.
+			// If there is a search term, filter through headings to find match.
 			if (this.headerSearchInput.length > 0) {
 				// Use spread to turn nodeList into array and filter it.
 				const headerSearchFilter = [...cardHeadingsAll].filter(heading => {
