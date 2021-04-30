@@ -41,6 +41,11 @@ export default {
 </script>
 
 <style type="text/css">
+	.header {
+		display: grid;
+		grid-template-rows: 50px 50px;
+	}
+
 	.header-main {
 		align-items: center;
 		background: #263955;
@@ -120,15 +125,15 @@ export default {
 			grid-template-columns: 250px 1fr;
 		}
 
-		.sidebar-collapse .header {
+		.sidebar-toggle .header {
 			grid-template-columns: 50px 1fr;
 		}
-		.sidebar-collapse .header-name {
+		.sidebar-toggle .header-name {
 			justify-content: center;
 			padding: 0;
 		}
 
-		.sidebar-collapse .header-name__greeting {
+		.sidebar-toggle .header-name__greeting {
 			display: none;
 		}
 	}

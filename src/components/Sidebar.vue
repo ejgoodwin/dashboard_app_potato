@@ -38,6 +38,18 @@ export default {
 <style type="text/css">
 	.sidebar {
 		background-color: #081727;
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		top: 50px;
+		width: 275px;
+		transform: translateX(300px);
+		transition: .1s;
+	}
+
+	.sidebar-toggle .sidebar {
+		display: block;
+		transform: translateX(0);
 	}
 
 	.sidebar__nav-list {
@@ -68,7 +80,6 @@ export default {
 		border-color: #00adef;
 	}
 
-
 	.sidebar__text {
 		flex-grow: 1;
 	}
@@ -81,12 +92,23 @@ export default {
 		padding: .1rem .5rem;
 	}
 
-	@media screen and (min-width: 800px) {
-		.sidebar-collapse .sidebar__text {
+	@media screen and (min-width: 800px) {	
+		.sidebar-toggle .content {
+			grid-template-columns: 50px 1fr;
+		}
+
+		.sidebar {
+			position: static;
+			width: auto;
+			transform: translateX(0);
+			transition: .1s;
+		}
+
+		.sidebar-toggle .sidebar__text {
 			display: none;
 		}
 
-		.sidebar-collapse .sidebar__nav-icon {
+		.sidebar-toggle .sidebar__nav-icon {
 			margin-right: 0;
 		}
 	}
