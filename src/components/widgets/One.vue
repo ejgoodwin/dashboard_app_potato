@@ -90,7 +90,7 @@ export default {
   }
 
   .widget-one__button:hover {
-    background-color: #263955;
+		background-color: #263955;
   }
 
   .widget-one__content-container {
@@ -99,15 +99,24 @@ export default {
   .widget-one__image {
     display: block;
     margin: 0 auto;
-    max-height: 400px;
-    object-fit: contain;
+		max-height: 400px;
+		max-width: 100%;
+		object-fit: contain;
   }
 
   .widget-one__explanation {
     max-height: 75%;
-    overflow: scroll;
-    padding: 10px;
+    overflow-y: auto;
+		padding: 10px;
   }
+
+	@media only screen and (max-width: 1200px) and (min-width: 800px) {
+		.widget-one__explanation {
+			max-height: 200px;
+			overflow-y: scroll;
+			border: 5px solid blue;
+		}
+	}
 
   @media screen and (max-width: 800px) {
     .widget-one__date {
