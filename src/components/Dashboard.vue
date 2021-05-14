@@ -1,8 +1,8 @@
 <template>
   <div class="dashboard">
-  	<one></one>
-  	<two></two>
-  	<three></three>
+  	<one class="card"></one>
+  	<two class="card"></two>
+  	<three class="card"></three>
   </div>
 </template>
 
@@ -31,4 +31,9 @@ export default {
 		padding: 16px;
 	}
 	
+	@media screen and (max-width: 550px) {
+		.dashboard {
+			grid-template-columns: 1fr;
+		}
+	}
 </style>
