@@ -9,7 +9,7 @@
       <button v-on:click="toggleFunction" class="widget-one__button">{{buttonText}}</button>
     </div>
     <div class="widget-one__content-container">
-      <div v-if="toggle === true">
+      <div v-if="toggle">
         <img v-bind:src="info.url" class="widget-one__image">
       </div>
       <div v-else>
@@ -21,7 +21,6 @@
 
 <script>
 
-console.log(import.meta.env)
 export default {
   name: 'WidgetOne',
   data () {
@@ -31,7 +30,7 @@ export default {
       buttonText: 'Explanation'
     }
   },
-  mounted: function() {
+  created: function() {
     fetch(`https://api.nasa.gov/planetary/apod?api_key=${import.meta.env.VITE_NASA_API_KEY}`)
       .then(response => response.json())
       .then(data => this.info = data)
@@ -51,59 +50,41 @@ export default {
 </script>
 
 <style type="text/css">
-  .widget-one {
+ .widget-one {
+    align-items: center;
     display: flex;
     flex-direction: column;
     padding: 0 10px 20px 10px;
 	}
-
   .widget-one__date {
     font-style: italic;
-    text-align: right;
+    align-self: flex-end;
   }
-	
 	.widget-one__header {
     font-size: 28px;
     margin: 10px;
-    text-align: center;
 	}
-
   .widget-one__title {
     padding-bottom: 5px;
-    text-align: center;
   }
-
   .widget-one__button-container {
-    margin-bottom: 5px;
     padding: 10px;
   }
-
   .widget-one__button {
     background-color: #081727;
     border: 1px solid;
     border-radius: 8px;
     box-shadow: 0 7px 15px rgba(0, 0, 0, 0.2);
     color: white;
-    display: block;
-    margin: 0 auto;
     padding: 10px;
+    margin-bottom: 5px;
   }
-
   .widget-one__button:hover {
 		background-color: #263955;
   }
-
-  .widget-one__content-container {
-    display: inline-block;
-  }
   .widget-one__image {
-    display: block;
-    margin: 0 auto;
 		max-height: 400px;
-		max-width: 100%;
-		object-fit: contain;
   }
-
   .widget-one__explanation {
     max-height: 75%;
     overflow-y: auto;
@@ -114,7 +95,6 @@ export default {
 		.widget-one__explanation {
 			max-height: 200px;
 			overflow-y: scroll;
-			border: 5px solid blue;
 		}
 	}
 
