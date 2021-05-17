@@ -5,45 +5,42 @@
         v-model:searchText="searchText"
         :search="searchLocation"
         />
-        <div id="map">
-          <!-- <mapbox
-          access-token="pk.eyJ1IjoicHVydml0cml2ZWRpIiwiYSI6ImNrYTU1Z3RnYzEwcHgza3AwYTU3c2h2ZDMifQ.3ZFchMC0MNZwHbY2Dz2MMA"
-          :map-options="{
-            style: 'mapbox://styles/mapbox/light-v9',
-            center: [-96, 37.8],
-            zoom: 3,
-            }"
-    /> -->
-        </div>
+      <MglMap
+        :accessToken="accessToken"
+        :mapStyle="mapStyle" />
     </div>
 </template>
 
 <script>
 import Search from '../common/Search.vue';
+import Mapbox from "mapbox-gl";
+import { MglMap } from "vue-mapbox";
 
 export default {
     name: 'Two',
     data: () => ({
         searchText: '',
+        accessToken: import.meta.env.VITE_MAPS_API_KEY,
+        mapStyle: 'mapbox://styles/mapbox/streets-v11',
     }),
     components: {
-        Search
+        Search,
+        MglMap,
     },
     methods: {
         searchLocation() {
             console.log(this.searchText)
         },
     },
+  created() {
+    this.mapbox = Mapbox;
+  }
 }
 </script>
 
 <style>
-.maps {
-    border: 1px solid blue;
-}
-
-#map {
-  width: 100%;
+.mgl-map-wrapper {
   height: 500px;
+  width: 100%;
 }
 </style>
