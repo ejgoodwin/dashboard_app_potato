@@ -1,7 +1,7 @@
 <template>
   <div class="maps">
     <Search
-      placeholder="Search for a city"
+      placeholder="Search for a location"
       v-model:searchText="searchText"
       :search="searchLocation"
     />
