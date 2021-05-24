@@ -13,8 +13,6 @@
 import Search from "../common/Search.vue";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-// import MapboxDirections from '@mapbox/mapbox-gl-directions'
-import { onMounted } from "vue";
 
 export default {
   name: "Two",
@@ -35,10 +33,10 @@ export default {
       this.removeMarkers()
 
       const address = this.searchText.split(' ').join('+');
-      const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${import.meta.env.VITE_GEOCODING_API_KEY}`)
+      const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${import.meta.env.VITE_GEOCODING_API_KEY}`);
       const result = await response.json();
-      const center_lng = result.results[0].geometry.location.lng
-      const center_lat = result.results[0].geometry.location.lat
+      const center_lng = result.results[0].geometry.location.lng;
+      const center_lat = result.results[0].geometry.location.lat;
       this.map.flyTo({center: [center_lng, center_lat], zoom:14});
 
       result.results.forEach(item => {
@@ -70,7 +68,7 @@ export default {
     });
     this.map.on("load", () => {
       const nav = new mapboxgl.NavigationControl();
-      this.map.addControl(nav)
+      this.map.addControl(nav);
     });
   },
 };
@@ -78,7 +76,9 @@ export default {
 
 <style>
 #map {
+  border-radius: 8px;
   height: 500px;
+  margin-top: 10px;
   width: 100%;
 }
 
