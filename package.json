@@ -6,7 +6,9 @@
     "build": "vite build"
   },
   "dependencies": {
-    "vue": "^3.0.4"
+    "mapbox-gl": "^2.2.0",
+    "vue": "^3.0.4",
+    "vue-mapbox": "^0.4.1"
   },
   "devDependencies": {
     "@vue/compiler-sfc": "^3.0.4",
