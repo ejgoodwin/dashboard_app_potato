@@ -61,7 +61,6 @@ export default {
     align-self: flex-end;
   }
 	.widget-one__header {
-    font-size: 28px;
     margin: 10px;
 	}
   .widget-one__title {
@@ -84,6 +83,7 @@ export default {
   }
   .widget-one__image {
 		max-height: 400px;
+    max-width: 100%;
   }
   .widget-one__explanation {
     max-height: 75%;
@@ -110,10 +110,6 @@ export default {
     .widget-one__button {
       font-size: 12px;
       padding: 5px;
-    }
-
-    .widget-one__image {
-      max-width: 100%;
     }
 
     .widget-one__explanation {
