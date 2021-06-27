@@ -1,10 +1,10 @@
 <template>
-	  <div class="dashboard">
-	  	<one class="card"></one>
-	  	<two class="card"></two>
-	  	<three class="card"></three>
-	  	<four class="card"></four>
-	  </div>
+  <div class="dashboard">
+  	<one class="card"></one>
+  	<two class="card"></two>
+  	<three class="card"></three>
+  	<four class="card"></four>
+  </div>
 </template>
 
 <script>

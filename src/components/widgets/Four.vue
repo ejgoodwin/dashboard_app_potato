@@ -8,7 +8,7 @@
 </template>
 
 <script>
-	import activityData from "../../data/steps.json";
+	import activityData from "../../data/activity-data.json";
 	export default {
 		name: 'Four',
 		data() {
