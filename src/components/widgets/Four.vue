@@ -2,7 +2,7 @@
 	<div class="steps">
 		<h2>Step count for the last 7 days</h2>
 		<div class="steps-bar-chart">
-			<svg ref="barChart" id="dynamic-bar-chart" xmlns="http://www.w3.org/2000/svg"></svg>
+			<svg ref="barChart" class="bar-chart-svg" xmlns="http://www.w3.org/2000/svg"></svg>
 		</div>
 	</div>
 </template>
@@ -105,6 +105,13 @@
 </script>
 
 <style type="text/css">
+	.bar-chart-svg {
+		display: block;
+		margin:  auto;
+		max-height: 400px;
+		max-width: 400px;
+	}
+
 	.steps-bar-chart {
 		padding: 0 1rem;
 	}
