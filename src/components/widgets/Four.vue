@@ -50,14 +50,15 @@
 
 				// Round peak to nearest 1000 and use it to scale the chart.
 				dataPeak = Math.ceil(dataPeak/1000)*1000;
-				scale = dataPeak/100;
-				tenThousandLine = 100 - (10000/scale);
-				fiveThousandLine = 100 - (5000/scale);
+				// Calculate the scale in order to fit the data onto the bar chart regardless of size.
+				scale = 100/dataPeak;
+				tenThousandLine = 10000 * scale;
+				fiveThousandLine = 5000 * scale;
 				
 				// Line for 10,000 mark.
 				const topLine = document.createElementNS("http://www.w3.org/2000/svg", "line");
-				topLine.setAttribute('y1', tenThousandLine);
-				topLine.setAttribute('y2', tenThousandLine);
+				topLine.setAttribute('y1', chartHeight - tenThousandLine);
+				topLine.setAttribute('y2', chartHeight - tenThousandLine);
 				topLine.setAttribute('x1', charWidth);
 				topLine.setAttribute('stroke-dasharray', '1,1');
 				topLine.setAttribute('stroke', tenThousandColour);
@@ -65,9 +66,11 @@
 				barChartContainer.appendChild(topLine);
 
 				// Text for 10,000 mark.
+				// [0] Bring text in by 9 so it doesn't overflow.
+				// [1] Add 4 so the text is visible sitting below the line.
 				const topLineText = document.createElementNS("http://www.w3.org/2000/svg", "text");
-				topLineText.setAttribute('x', charWidth - 9);
-				topLineText.setAttribute('y', tenThousandLine - 2);
+				topLineText.setAttribute('x', charWidth - 9); // [0]
+				topLineText.setAttribute('y', chartHeight - tenThousandLine + 4); // [1]
 				topLineText.setAttribute('font-size', '3px');
 				topLineText.setAttribute('fill', tenThousandColour);
 				const topLineTextNode = document.createTextNode('10,000');
@@ -76,8 +79,8 @@
 
 				// Line for 5,000 mark.
 				const middleLine = document.createElementNS("http://www.w3.org/2000/svg", "line");
-				middleLine.setAttribute('y1', fiveThousandLine);
-				middleLine.setAttribute('y2', fiveThousandLine);
+				middleLine.setAttribute('y1', chartHeight - fiveThousandLine);
+				middleLine.setAttribute('y2', chartHeight - fiveThousandLine);
 				middleLine.setAttribute('x1', charWidth);
 				middleLine.setAttribute('stroke-dasharray', '1,1');
 				middleLine.setAttribute('stroke', fiveThousandColour);
@@ -85,9 +88,11 @@
 				barChartContainer.appendChild(middleLine);
 
 				// Text for 5,000 mark.
+				// [0] Bring text in by 8 so it doesn't overflow.
+				// [1] Add 4 so the text is visible sitting below the line.
 				const middleLineText = document.createElementNS("http://www.w3.org/2000/svg", "text");
-				middleLineText.setAttribute('x', charWidth - 8);
-				middleLineText.setAttribute('y', fiveThousandLine - 2);
+				middleLineText.setAttribute('x', charWidth - 8); // [0]
+				middleLineText.setAttribute('y', chartHeight - fiveThousandLine + 4); // [1]
 				middleLineText.setAttribute('font-size', '3px');
 				middleLineText.setAttribute('fill', fiveThousandColour);
 				const middleLineTextNode = document.createTextNode('5,000');
@@ -109,7 +114,7 @@
 				let positionX = 0;
 				for (let i = 0; i < 7; i++) {
 					
-					const barHeight = this.stepsData[i] / scale - offsetBottom;
+					const barHeight = this.stepsData[i] * scale - offsetBottom;
 					const bar = document.createElementNS("http://www.w3.org/2000/svg", "rect");
 					bar.setAttribute('x', positionX);
 					bar.setAttribute('y', (chartHeight - barHeight - offsetBottom));
@@ -131,7 +136,6 @@
 					labelX.setAttribute('text-anchor', 'middle');
 					
 					let dayLabel;
-					console.log(today);
 					dayLabel = days[today];
 					if (today == 6) {
 						today = 0;
@@ -175,6 +179,7 @@
 		margin:  auto;
 		max-height: 400px;
 		max-width: 400px;
+		transition: .2s;
 	}
 
 	.steps-bar-chart {
